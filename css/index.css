@@ -1,0 +1,229 @@
+@font-face {
+  font-family: "Cafe24Dongdong";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Dongdong.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e12428;
+  font-size: 20px;
+  font-family: Cafe24Dongdong;
+}
+
+.container {
+  position: relative;
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+input, textarea, button, select, pre {
+  font-family: inherit;
+}
+
+table, th, td {
+  border-collapse: collapse;
+}
+
+ul, ol {
+  list-style: none;
+  -webkit-padding-start: 0;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.click {
+  cursor: pointer;
+}
+.click * {
+  pointer-events: none;
+}
+
+address {
+  font-style: normal;
+}
+
+button {
+  border: 0;
+  background: transparent;
+}
+
+input:focus {
+  outline: none;
+}
+
+a, input, button, select, label {
+  cursor: pointer;
+}
+
+section > h2 {
+  display: none;
+}
+
+header, main, footer {
+  display: block;
+}
+
+.wrap {
+  height: 100vh;
+  overflow-y: hidden;
+}
+.wrap .modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  z-index: 2;
+}
+.wrap #musicModal .music-modal-box {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  padding: 50px;
+  border-radius: 15px;
+  background-color: #dcd3aa;
+}
+.wrap #musicModal .music-modal-box p {
+  font-size: 24px;
+  color: #222;
+  font-weight: 600;
+  text-align: center;
+}
+.wrap #musicModal .music-modal-box .btn-box {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+.wrap #musicModal .music-modal-box .btn-box button {
+  width: 100px;
+  padding: 8px 0 3px;
+  font-size: 24px;
+  color: #555;
+  border: 3px dashed #555;
+  border-radius: 100px;
+}
+.wrap #musicModal .music-modal-box .btn-box button:hover#musicStart {
+  color: #fff;
+  border-color: #0a71b3;
+  background-color: #0a71b3;
+}
+.wrap #musicModal .music-modal-box .btn-box button:hover#musicCancel {
+  color: #fff;
+  border-color: #e12428;
+  background-color: #e12428;
+}
+.wrap .title-music-control {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.wrap .title-music-control h1 {
+  width: 300px;
+}
+.wrap .title-music-control h1 img {
+  width: 100%;
+}
+.wrap .title-music-control #musicControl {
+  position: relative;
+  width: 150px;
+  cursor: pointer;
+  filter: grayscale(100%);
+}
+.wrap .title-music-control #musicControl:hover, .wrap .title-music-control #musicControl.play {
+  filter: grayscale(0%);
+}
+.wrap .title-music-control #musicControl:hover span, .wrap .title-music-control #musicControl.play span {
+  display: block;
+}
+.wrap .title-music-control #musicControl img {
+  width: 100%;
+  border: 5px solid #dcd3aa;
+}
+.wrap .title-music-control #musicControl span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  color: #dcd3aa;
+}
+.wrap .circle {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin: 30px auto 0;
+  border: 35px solid #dcd3aa;
+  border-radius: 50%;
+  background-color: #80c0b0;
+}
+.wrap .circle .circle-dot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: inherit;
+  height: inherit;
+  border: 28px dotted white;
+  border-radius: inherit;
+  animation: light 1s linear infinite alternate-reverse;
+}
+@-webkit-keyframes light {
+  from {
+    box-shadow: 0 0 130px rgba(255, 255, 0, 0.8);
+  }
+  to {
+    box-shadow: 0 0 30px rgba(255, 255, 0, 0.3);
+  }
+}
+@keyframes light {
+  from {
+    box-shadow: 0 0 130px rgba(255, 255, 0, 0.8);
+  }
+  to {
+    box-shadow: 0 0 30px rgba(255, 255, 0, 0.3);
+  }
+}
+.wrap .circle .circle-dot .main-img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.wrap .circle .circle-dot .main-img img {
+  width: 490px;
+  filter: drop-shadow(0 15px 20px rgba(0, 0, 0, 0.2));
+}
+.wrap .menu1, .wrap .menu2, .wrap .menu3 {
+  position: absolute;
+}
+.wrap .menu1 {
+  left: 50px;
+  top: 170px;
+  transform: rotateZ(-20deg);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+.wrap .menu1:hover {
+  background-color: #dcd3aa;
+}
+.wrap .menu1 img {
+  width: 200px;
+}/*# sourceMappingURL=index.css.map */
