@@ -17,6 +17,8 @@
 }
 
 body {
+    height: 100vh;
+    overflow: hidden;
     background-color: $red;
     
     font: {

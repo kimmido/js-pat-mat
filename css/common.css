@@ -11,6 +11,8 @@
 }
 
 body {
+  height: 100vh;
+  overflow: hidden;
   background-color: #e12428;
   font-size: 20px;
   font-family: Cafe24Dongdong;

@@ -5,8 +5,7 @@
 
 
 .wrap {
-    height: 100vh;
-    overflow: hidden;
+    
 
     .modal-overlay {
         @include overlay(rgba(0, 0, 0, 0.6));
@@ -146,6 +145,7 @@
 
     #menu1, #menu2, #menu3 {
         position: absolute;
+        cursor: pointer;
     }
 
     #menu1 {
@@ -164,17 +164,15 @@
         }
     }
 
-    #menuCon1 {
+    #Con1 {
         @include overlay($yellow);
         padding: 20px 0 100px;
-        display: none;
-        height: 0;
-
-        transition: height .3s;
-
+        margin-top: 100%;
+        
+        transition: margin-top .4s linear;
+        
         &.on {
-            display: block;
-            height: auto;
+            margin-top: 0;
         }
 
         .close {
@@ -195,11 +193,11 @@
             justify-content: space-between;
             padding: 10px 0;
             border: 5px solid $blue;
-            border-radius: 20px;
+            border-radius: 30px;
             background-color: #fff;
 
             li {
-                width: 20%;
+                width: 25%;
                 text-align: center;
                 cursor: pointer;
                 
@@ -224,6 +222,7 @@
                     display: block;
                     font-size: 30px;
                     font-weight: 600;
+                    pointer-events: none;
 
                     transition: all .3s;
                 }
@@ -238,7 +237,7 @@
                 display: flex;
                 justify-content: space-between;
                 
-                .pat, .mat {
+                > div {
                     position: relative;
                     width: 48%;
                     overflow: hidden;
@@ -261,49 +260,56 @@
                             img {
                                 @include position_center();
                                 width: 300px;
+                                
+                            }
+
+                            &:nth-child(3) {
+
+                                img {
+                                    width: auto;
+                                    height: 370px;
+                                }
+                            }
+
+                            &:nth-child(4) {
+
+                                img {
+                                    width: 200px;
+                                }
                             }
                         }
                     }
 
                     .name {
                         position: absolute;
-                        // left: 50%; 
                         bottom: 0;
                         width: 100%;
-                        padding: 10px 0;
+                        padding: 20px 0;
                         text-align: center;
                         color: #fff;
-                        // transform: translateX(-50%);
                         background-color: $blue;
 
                         strong {
-                            font-size: 30px;
+                            font-size: 40px;
+                            font-weight: 600;
                         }
                     }
+                    
+                    // &.pat {
+
+                    //     .name {
+                    //         background-color: $pat;
+                    //     }
+                    // }
+
+                    // &.mat {
+
+                    //     .name {
+                    //         background-color: $mat;
+                    //     }
+                    // }
                 }
             }
         }
     } // #menuCon1
-    // .menu-box {
-    //     margin-top: 20px;
-    //     display: flex;
-    //     justify-content: center;
-    //     // background-color: darkblue;
-        
-    //     li {
-    //         padding: 15px;
-    //         border-radius: 30px;
-    //         background-color: $yellow;
-
-    //         & + li {
-    //             margin-left: 60px;
-    //         }
-
-    //         .img {
-    //             width: 200px; 
-    //             height: 150px;
-    //             // background-color: beige;
-    //         }
-    //     }
-    // }
 } // wrap

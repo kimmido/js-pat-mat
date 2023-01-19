@@ -11,6 +11,8 @@
 }
 
 body {
+  height: 100vh;
+  overflow: hidden;
   background-color: #e12428;
   font-size: 20px;
   font-family: Cafe24Dongdong;
@@ -74,10 +76,6 @@ header, main, footer {
   display: block;
 }
 
-.wrap {
-  height: 100vh;
-  overflow: hidden;
-}
 .wrap .modal-overlay {
   position: absolute;
   top: 0;
@@ -216,6 +214,7 @@ header, main, footer {
 }
 .wrap #menu1, .wrap #menu2, .wrap #menu3 {
   position: absolute;
+  cursor: pointer;
 }
 .wrap #menu1 {
   left: 50px;
@@ -231,7 +230,7 @@ header, main, footer {
 .wrap #menu1 img {
   width: 200px;
 }
-.wrap #menuCon1 {
+.wrap #Con1 {
   position: absolute;
   top: 0;
   left: 0;
@@ -241,15 +240,13 @@ header, main, footer {
   height: 100%;
   background-color: #dcd3aa;
   padding: 20px 0 100px;
-  display: none;
-  height: 0;
-  transition: height 0.3s;
+  margin-top: 100%;
+  transition: margin-top 0.4s linear;
 }
-.wrap #menuCon1.on {
-  display: block;
-  height: auto;
+.wrap #Con1.on {
+  margin-top: 0;
 }
-.wrap #menuCon1 .close {
+.wrap #Con1 .close {
   position: absolute;
   right: 40px;
   top: 30px;
@@ -257,46 +254,47 @@ header, main, footer {
   cursor: pointer;
   transition: transform 0.3s;
 }
-.wrap #menuCon1 .close:hover {
+.wrap #Con1 .close:hover {
   transform: scale(1.2);
 }
-.wrap #menuCon1 .tab {
+.wrap #Con1 .tab {
   display: flex;
   justify-content: space-between;
   padding: 10px 0;
   border: 5px solid #0a71b3;
-  border-radius: 20px;
+  border-radius: 30px;
   background-color: #fff;
 }
-.wrap #menuCon1 .tab li {
-  width: 20%;
+.wrap #Con1 .tab li {
+  width: 25%;
   text-align: center;
   cursor: pointer;
   padding: 30px 20px;
 }
-.wrap #menuCon1 .tab li + li {
+.wrap #Con1 .tab li + li {
   border-left: 3px dashed #0a71b3;
 }
-.wrap #menuCon1 .tab li.on {
+.wrap #Con1 .tab li.on {
   color: #e12428;
 }
-.wrap #menuCon1 .tab li:hover span {
+.wrap #Con1 .tab li:hover span {
   transform: scale(1.4);
 }
-.wrap #menuCon1 .tab li span {
+.wrap #Con1 .tab li span {
   display: block;
   font-size: 30px;
   font-weight: 600;
+  pointer-events: none;
   transition: all 0.3s;
 }
-.wrap #menuCon1 .tab-con-wrap {
+.wrap #Con1 .tab-con-wrap {
   margin-top: 50px;
 }
-.wrap #menuCon1 .tab-con-wrap .tab-con-flex {
+.wrap #Con1 .tab-con-wrap .tab-con-flex {
   display: flex;
   justify-content: space-between;
 }
-.wrap #menuCon1 .tab-con-wrap .tab-con-flex .pat, .wrap #menuCon1 .tab-con-wrap .tab-con-flex .mat {
+.wrap #Con1 .tab-con-wrap .tab-con-flex > div {
   position: relative;
   width: 48%;
   overflow: hidden;
@@ -304,35 +302,43 @@ header, main, footer {
   border-radius: 20px;
   background-color: #fff;
 }
-.wrap #menuCon1 .tab-con-wrap .tab-con-flex .pat .tab-con-list, .wrap #menuCon1 .tab-con-wrap .tab-con-flex .mat .tab-con-list {
+.wrap #Con1 .tab-con-wrap .tab-con-flex > div .tab-con-list {
   width: 100%;
   height: 100%;
 }
-.wrap #menuCon1 .tab-con-wrap .tab-con-flex .pat .tab-con-list li, .wrap #menuCon1 .tab-con-wrap .tab-con-flex .mat .tab-con-list li {
+.wrap #Con1 .tab-con-wrap .tab-con-flex > div .tab-con-list li {
   position: relative;
   display: none;
   width: 100%;
   height: 100%;
 }
-.wrap #menuCon1 .tab-con-wrap .tab-con-flex .pat .tab-con-list li.on, .wrap #menuCon1 .tab-con-wrap .tab-con-flex .mat .tab-con-list li.on {
+.wrap #Con1 .tab-con-wrap .tab-con-flex > div .tab-con-list li.on {
   display: block;
 }
-.wrap #menuCon1 .tab-con-wrap .tab-con-flex .pat .tab-con-list li img, .wrap #menuCon1 .tab-con-wrap .tab-con-flex .mat .tab-con-list li img {
+.wrap #Con1 .tab-con-wrap .tab-con-flex > div .tab-con-list li img {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   width: 300px;
 }
-.wrap #menuCon1 .tab-con-wrap .tab-con-flex .pat .name, .wrap #menuCon1 .tab-con-wrap .tab-con-flex .mat .name {
+.wrap #Con1 .tab-con-wrap .tab-con-flex > div .tab-con-list li:nth-child(3) img {
+  width: auto;
+  height: 370px;
+}
+.wrap #Con1 .tab-con-wrap .tab-con-flex > div .tab-con-list li:nth-child(4) img {
+  width: 200px;
+}
+.wrap #Con1 .tab-con-wrap .tab-con-flex > div .name {
   position: absolute;
   bottom: 0;
   width: 100%;
-  padding: 10px 0;
+  padding: 20px 0;
   text-align: center;
   color: #fff;
   background-color: #0a71b3;
 }
-.wrap #menuCon1 .tab-con-wrap .tab-con-flex .pat .name strong, .wrap #menuCon1 .tab-con-wrap .tab-con-flex .mat .name strong {
-  font-size: 30px;
+.wrap #Con1 .tab-con-wrap .tab-con-flex > div .name strong {
+  font-size: 40px;
+  font-weight: 600;
 }/*# sourceMappingURL=index.css.map */
