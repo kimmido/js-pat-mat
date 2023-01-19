@@ -10,14 +10,7 @@
 </head>
 <body>
     <div class="wrap">
-        <audio loop id="music">
-            <source src="" type="audio/mp3">
-            <object data="path/to/source.swf">
-                <p>이 브라우저는 HTML5 오디오를 지원하지 않습니다.</p>
-            </object>
-        </audio>
-
-        <div id="musicModal" class="modal-overlay">
+        <!-- <div id="musicModal" class="modal-overlay">
             <div class="music-modal-box">
                 <p>Shall we play the song?</p>
                 <div class="btn-box">
@@ -25,7 +18,7 @@
                     <button id="musicCancel">No</button>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div class="container">
             <div class="title-music-control">
@@ -36,6 +29,12 @@
                     <img src="./images/music.png" alt="피아노 연주하는 모습">
                     <span>Music</span>
                 </div>
+                <audio loop id="music">
+                    <source src="./media/Pat_Mat_main_music.mp3" type="audio/mp3">
+                    <object data="path/to/source.swf">
+                        <p>이 브라우저는 HTML5 오디오를 지원하지 않습니다.</p>
+                    </object>
+                </audio>
             </div>
             
                 
@@ -47,8 +46,14 @@
                 </div>
             </div>
             
-            <div class="menu1">
-                <img src="./images/menu(1).png" alt="">
+            <div id="menu1" class="menu">
+                <img src="./images/menu(1)_shadow.png" alt="누가 패트이고 누가 매트일까요?">
+            </div>
+            <div id="menu2" class="menu">
+                <img src="./images/main(1)_shadow.png" alt="누가 패트? 매트?">
+            </div>
+            <div id="menu3" class="menu">
+                <img src="./images/main(1)_shadow.png" alt="누가 패트? 매트?">
             </div>
             
             <!-- <ul class="menu-box">
@@ -63,6 +68,53 @@
                 </li>
             </ul> -->
         </div>
-    </div>
+
+        <div id="menuCon1">
+            <div class="close">
+                <img src="./images/icon_back.svg" alt="닫기">
+            </div>
+            <div class="container">
+                <ul class="tab">
+                    <li class="on"><span>모자</span></li>
+                    <li><span>옷</span></li>
+                    <li><span>키</span></li>
+                    <li><span>얼굴길이</span></li>
+                    <li><span>코</span></li>
+                </ul>
+                <div class="tab-con-wrap">
+                    <div class="tab-con-flex">
+                        <div class="pat">
+                            <ul class="tab-con-list">
+                                <li class="on"><img src="./images/hat_pat.png" alt="패트 모자"></li>
+                                <li><img src="" alt="패트 옷"></li>
+                                <li><img src="" alt="패트 키"></li>
+                                <li><img src="" alt="패트 얼굴길이"></li>
+                                <li><img src="" alt="패트 코"></li>
+                            </ul>
+                            <div class="name">
+                                <strong>Pat</strong>
+                            </div>
+                        </div>
+                        <div class="mat">
+                            <ul class="tab-con-list">
+                                <li class="on"><img src="./images/hat_mat.png" alt="매트모자"></li>
+                                <li><img src="./images/" alt="매트 옷"></li>
+                                <li><img src="" alt="매트 키"></li>
+                                <li><img src="" alt="매트 얼굴길이"></li>
+                                <li><img src="" alt="매트 코"></li>
+                            </ul>
+                            <div class="name">
+                                <strong>Mat</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--tab-con-->
+            </div><!--container-->
+        </div><!--#menuCon1-->
+
+        <div id="menuCon2">
+            <div class="close"></div>
+        </div>
+    </div><!--wrap-->
 </body>
 </html>

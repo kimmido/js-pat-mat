@@ -6,7 +6,7 @@
 
 .wrap {
     height: 100vh;
-    overflow-y: hidden;
+    overflow: hidden;
 
     .modal-overlay {
         @include overlay(rgba(0, 0, 0, 0.6));
@@ -80,13 +80,19 @@
             width: 150px;
             cursor: pointer;
             filter: grayscale(100%);
+
+            transition: all .3s;
             
-            &:hover,
+            &:hover {
+
+                span {
+                    display: block;
+                }
+            }
+            
             &.play {
                 filter: grayscale(0%);
 
-                img {
-                }
                 span {
                     display: block;
                 }
@@ -138,11 +144,11 @@
         }
     } // circle
 
-    .menu1, .menu2, .menu3 {
+    #menu1, #menu2, #menu3 {
         position: absolute;
     }
 
-    .menu1 {
+    #menu1 {
         left: 50px; top: 170px;
         transform: rotateZ(-20deg);
 
@@ -158,6 +164,126 @@
         }
     }
 
+    #menuCon1 {
+        @include overlay($yellow);
+        padding: 20px 0 100px;
+        display: none;
+        height: 0;
+
+        transition: height .3s;
+
+        &.on {
+            display: block;
+            height: auto;
+        }
+
+        .close {
+            position: absolute;
+            right: 40px; top: 30px;
+            width: 50px;
+            cursor: pointer;
+            
+            transition: transform .3s;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+
+        .tab {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border: 5px solid $blue;
+            border-radius: 20px;
+            background-color: #fff;
+
+            li {
+                width: 20%;
+                text-align: center;
+                cursor: pointer;
+                
+                padding: 30px 20px;
+
+                & + li {
+                    border-left: 3px dashed $blue;
+                }
+
+                &.on {
+                    color: $red;
+                }
+                
+                &:hover {
+                    
+                    span {
+                        transform: scale(1.4);
+                    }
+                }
+
+                span {
+                    display: block;
+                    font-size: 30px;
+                    font-weight: 600;
+
+                    transition: all .3s;
+                }
+            }
+
+        } // tab
+        
+        .tab-con-wrap {
+            margin-top: 50px;
+
+            .tab-con-flex {
+                display: flex;
+                justify-content: space-between;
+                
+                .pat, .mat {
+                    position: relative;
+                    width: 48%;
+                    overflow: hidden;
+                    aspect-ratio: 1 / 1;
+                    border-radius: 20px;
+                    background-color: #fff;
+
+                    .tab-con-list {
+                        @include square(100%);
+
+                        li {
+                            position: relative;
+                            display: none;
+                            @include square(100%);
+    
+                            &.on {
+                                display: block;
+                            }
+
+                            img {
+                                @include position_center();
+                                width: 300px;
+                            }
+                        }
+                    }
+
+                    .name {
+                        position: absolute;
+                        // left: 50%; 
+                        bottom: 0;
+                        width: 100%;
+                        padding: 10px 0;
+                        text-align: center;
+                        color: #fff;
+                        // transform: translateX(-50%);
+                        background-color: $blue;
+
+                        strong {
+                            font-size: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    } // #menuCon1
     // .menu-box {
     //     margin-top: 20px;
     //     display: flex;
