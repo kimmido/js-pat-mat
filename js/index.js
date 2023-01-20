@@ -1,39 +1,47 @@
 window.onload = function() {
     const music = document.getElementById('music');
-    const musicControl = document.getElementById('musicControl');
     const musicStart = document.getElementById('musicStart');
     const musicCancel = document.getElementById('musicCancel');
     const musicModal = document.getElementById('musicModal');
+    const musicControl = document.getElementById('musicControl');
+    let target;
+    let musicToggle;
 
     musicStart.addEventListener("click", function() {
-        toggle = false;
-        musicToggle();
+        musicToggle = false;
+        musicPlayEvent();
         musicModal.style.display = "none";
     })
 
     musicCancel.addEventListener("click", function() {
-        toggle = true;
-        musicToggle();
+        musicToggle = true;
+        musicPlayEvent();
         musicModal.style.display = "none";
     })
 
-    musicControl.addEventListener("click", function() {
-        this.style.transform = "scale(0.8)";
-        setTimeout(() => {
-            this.style.transform = "scale(1)";
-        }, 300)
-        musicToggle();
+    musicControl.addEventListener("click", (e) => {
+        clickScaleEvent(e);
+        musicPlayEvent();
     });
 
-    function musicToggle() {
-        toggle = !toggle;
-        if(toggle) {
+    function musicPlayEvent() {
+        musicToggle = !musicToggle;
+        if(musicToggle) {
             music.play();
             musicControl.classList.add("play");
         } else {
             music.pause();
             musicControl.classList.remove("play");
         }
+    }
+
+    function clickScaleEvent(e) {
+        target = e.currentTarget;
+
+        target.style.transform = "scale(0.8)";
+        setTimeout(() => {
+            target.style.transform = "scale(1)";
+        }, 300)
     }
 
 
@@ -46,43 +54,42 @@ window.onload = function() {
             music.play();
         }
     }
+    
+    
+    (function menuMouseHover() {
+        const menu = document.querySelectorAll(".menu");
+        let img;
+        let src;
+        let val;
+    
+        for(let i = 0; i < menu.length; i++) {
+            img = menu[i].querySelector("img");
+            
+            menu[i].addEventListener("mouseover", function() {
+                src = img.getAttribute("src");
+                val = src.replace(`menu(${i + 1})_shadow`,`menu(${i + 1})`);
+                img.setAttribute("src", val);
+            })
+            
+            menu[i].addEventListener("mouseout", function() {
+                src = img.getAttribute("src");
+                val = src.replace(`menu(${i + 1})`,`menu(${i + 1})_shadow`);
+                img.setAttribute("src", val);
+            })
+        }
+    })();
+
 
     
-    const menu = document.querySelectorAll(".menu");
     const menu1 = document.getElementById("menu1");
-    
-    console.log(menu);
-
-    let img;
-    let src;
-    let val;
-
-    for(let i = 0; i < menu.length; i++) {
-        menu[i].addEventListener("mouseover", function() {
-            img = this.querySelector("img");
-            src = img.getAttribute("src");
-            val = src.replace(`menu(${i + 1})_shadow`,`menu(${i + 1})`);
-            img.setAttribute("src", val);
-        })
-        
-        menu[i].addEventListener("mouseout", function() {
-            img = this.querySelector("img");
-            src = img.getAttribute("src");
-            val = src.replace(`menu(${i + 1})`,`menu(${i + 1})_shadow`);
-            img.setAttribute("src", val);
-        })
-        
-    }
-    
-
     const Con01 = document.getElementById("Con1");
     
     menu1.addEventListener("click", function() {
         Con01.classList.add("on");
         changeAudio('menu(1)');
-    })
+    })    
     
-    
+
     const close = document.querySelectorAll(".close");
     
     close.forEach(close => {
